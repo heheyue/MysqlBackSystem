@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no"> 
+    <meta charset="UTF-8">
+    <meta name="csrf-param" content="_csrf">
+    <title>CMDB</title>
+    <link rel="shortcut icon" href="/static/images/smalllogo.png" type="image/x-icon">
+    <link href="/static/css/login.css" rel="stylesheet">
+</head>
+<body>
+ <div class="sign">
+  <div class="loginWrap"> <a class="logo"></a>
+    <div class="loginPic zxflogoPic clearfix">
+      <div class="loginImg">
+         <a href="/web1/login" target="_blank" ><img src="/static/images/shouye.png" border="0" style="height: 300px;width: 500px;"></a>
+      </div>
+      <div class="loginBord" id="login-base">
+        <div class="loginTit">
+
+          <div class="tosignup">
+              <a href="/web1/register" style="margin-left:-100px;color:#d54e4e;font-size: large;">注册</a>
+          </div>
+
+          <h1 style="
+          color:#333;">登录CMDB</h1>
+        </div>
+          <form id="login-form"  method="post" role="form">
+                <input name="_csrf" value="user" type="hidden">
+                  <div class="inpBox textbox_ui user">
+                    <div class="form-group field-loginform-username required">
+                        <label class="control-label" for="loginform-username"></label>
+                        <input id="loginform-username" class="form-control" name="LoginForm[username]" placeholder="用户名" type="text">
+
+                        <div class="custom invalid error_9o8Kl" style="display:none"></div>
+                    </div>
+                  </div>
+                  <div class="inpBox textbox_ui pass zxfpass">
+                     <div class="form-group field-loginform-password required">
+                        <label class="control-label" for="loginform-password"></label>
+                        <input id="loginform-password" class="form-control" name="LoginForm[password]" placeholder="密码" type="password">
+
+                        <div class="custom invalid error_9o8Kl" style="display:none"></div>
+                    </div>
+                  </div>
+{#              <div>{{ status }}</div>#}
+          <div class="clearfix zxfDl" style="padding: 40px 0;">
+            <a class="fr" href="/web1/login">忘记密码?</a>
+                <label for="agree_userterm" class="fr">
+                  <div class="form-group field-loginform-rememberme">
+                        <div class="checkbox">
+                            <label for="loginform-rememberme">
+                            <input name="LoginForm[rememberMe]" value="0" type="hidden"><input id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" type="checkbox">
+                            10天内自动登录
+                            </label>
+                                <div class="custom invalid error_9o8Kl" style="display:none"></div>
+
+                        </div>
+                  </div>
+                </label>
+		   <input class="loginbtn fl" name="login-button" value="登 录" type="submit" >
+          </div>
+          <div id="errorMsg"></div>
+        </form>
+        <div class="shadow_l"></div>
+        <div class="shadow_r"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+	<!--意见反馈-->
+<div class="feedback" style="display:none">
+    <div class="popyjdatil">
+        <dl class="dl_400 pl20 mb10 clearfix">
+            <dt class="left mt5 tr">意见或建议：</dt>
+            <dd class="left validation_or">
+                <span><textarea name="feedarea" cols="" rows="" class="pop_area_320 inputtext_del t12" placeholder="请详细描述意见、问题或建议，2-300字以内"></textarea><span class="cl_red" id="cl_redp"></span></span>
+            </dd>
+
+        </dl>
+        <dl class="dl_400 pl20 mb10 clearfix">
+            <dt class="left mt5 tr">联系方式：</dt>
+            <dd class="left validation_or">
+                <span><input placeholder="邮箱/QQ号" class="pop_input_320 inputtext_del t12" name="feedord" type="text"><span class="cl_red" id="c1_redb"></span></span>
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<div class="feedbackstatus" style="display:none">
+    <div class="popsuctext">您已提交成功！<br>感谢您的宝贵意见，我们会尽快处理</div>
+    <div class="regemailloeslist" style="display:none">
+        <div class="tl t14 mb15 pl20 emailstatus"></div>
+    </div>
+</div>
+<div class="foot">
+<a target="_blank" href="/web1/login">关于我们</a>
+|
+<a target="_blank" href="/web1/login">联系我们</a>
+|
+<a target="_blank" href="/web1/login">网站大事</a>
+|
+<br>Copyright © 2005-2017 <a href="/web1/login">CMDB</a> 版权所有
+</div>
+
+{#	<script src="51CTO%E6%8A%80%E6%9C%AF%E5%AE%B6%E5%9B%AD_files/loginForm.js"></script>#}
+
+<script src="/static/js/plug.js"></script>
+<script type="text/javascript">
+    var login_status = {{ status|safe }}
+    if (login_status){
+        alert(login_status)
+    }
+</script>
+{#<script type="text/javascript">#}
+{#            document.write(decodeURI("%3Cscript src='https://tongji.51cto.com/cto.js/3d7ca8d8c01f7e7b50250ff1c15bdae3' type='text/javascript'%3E%3C/script%3E"));#}
+{#	<script type="text/javascript">jQuery(document).ready(function () {#}
+{#jQuery('#login-form').yiiActiveForm([{"id":"loginform-username","name":"username","container":".field-loginform-username","input":"#loginform-username","error":".custom.invalid.error_9o8Kl","encodeError":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"账号不能为空"});}},{"id":"loginform-password","name":"password","container":".field-loginform-password","input":"#loginform-password","error":".custom.invalid.error_9o8Kl","encodeError":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"密码不能为空"});}},{"id":"loginform-rememberme","name":"rememberMe","container":".field-loginform-rememberme","input":"#loginform-rememberme","error":".custom.invalid.error_9o8Kl","encodeError":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"10天内自动登录 must be either \"1\" or \"0\".","skipOnEmpty":1});}}], []);#}
+{#{);</script>	#}
+	
+</body>
+ </html>

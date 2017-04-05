@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <input id="name" type="text">
+    <input type="button" value="点击执行ajax" onclick="Dotest()">
+
+    <script type="application/javascript" src="/static/css/jquery-1.10.2.min.js"></script>
+    <script type="application/javascript">
+        function Dotest(){
+            var temp = $('#name').val()
+            $.ajax({
+                url:'/web1/test/',
+                type:'POST',
+                data:{dat:temp},
+                success:function(arg){
+                    console.log(arg);
+                },
+                error:function(){
+                    console.log('failed')
+                }
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>

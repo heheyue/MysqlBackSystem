@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #Pageing A{
+            background-color: #008844;
+            border: 1px solid White;
+            text-decoration: none;
+            color:White;
+            padding: .1em .6em .2em .6em;
+        }
+    </style>
+</head>
+<body>
+    <h2>分页展示</h2>
+    <table border="1">
+        {% for item in data %}
+            <tr>
+                <td>{{ item.hostname }}</td>
+                <td>{{ item.ip }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div>总数:{{ count }}</div>
+    <div id="Pageing">{{ page }}</div>
+</body>
+</html>

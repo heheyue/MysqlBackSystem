@@ -1,0 +1,9 @@
+--------------------------------------------------------------------------
+#使python3.6支持mysql数据库连接。
+安装 PyMySQL 
+更改python中django的数据库连接方式
+Python35\Lib\site-packages\django\db\backends\mysql\__init__.py 
+添加如下两行：
+	import pymysql 
+	pymysql.install_as_MySQLdb()
+----------------------------------------------------------------------------

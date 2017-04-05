@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <input type="text" id="na">
+    <script src="/static/js/jquery-1.8.3.js"></script>
+</head>
+<body>
+    <input type="button" value="点击" onclick="Doajax()">
+
+    <script type="text/javascript">
+        function Doajax(){
+            var temp = $('#na').val();
+            $.ajax({
+                url:'/web1/ajax/',
+                type:'POST',
+                data:{data:temp},
+                success:function(arg){
+                    var obj = jQuery.parseJSON(arg)
+                    console.log(obj.data['data1']);
+                },
+                error:function(){
+                    console.log('failed')
+                }
+            })
+        }
+    </script>
+</body>
+</html>
